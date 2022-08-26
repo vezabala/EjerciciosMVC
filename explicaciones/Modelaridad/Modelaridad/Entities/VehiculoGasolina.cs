@@ -13,7 +13,7 @@ namespace Modelaridad.Entities
 
         }
 
-        public void ImprimirValore()
+        public void ImprimirValores()
         {
             if (string.IsNullOrEmpty(Placa))
                 throw new Exception("");
