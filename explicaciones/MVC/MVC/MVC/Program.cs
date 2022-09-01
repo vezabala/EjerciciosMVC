@@ -1,0 +1,2 @@
+﻿// Patron entidad
+// Tiene identificador
