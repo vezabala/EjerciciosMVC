@@ -6,16 +6,21 @@ using System.Threading.Tasks;
 
 namespace MVC.Models
 {
-    internal class Profesor : Entity
+    public class Profesor : Entity
     {
         public string Cedula { get; private set; }
 
         public List<EstudianteProfesor> EstudianteProfesors { get; private set; }
 
-        public Profesor(string id, string cedula) : base(id)
+        private Profesor(string id, string cedula) : base(id)
         {
             Cedula = cedula;
             EstudianteProfesors = new();
+        }
+
+        public static Profesor Build(string id, string cedula)
+        {
+            return new Profesor(id, cedula);
         }
 
         public void AddEstudiante(string estudianteId, string EstudianteName, Escuela escuela)

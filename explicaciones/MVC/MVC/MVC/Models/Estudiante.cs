@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVC.Models
 {
-    internal class Estudiante : Entity
+    public class Estudiante : Entity
     {
         public string Name { get; private set; }
 
@@ -14,11 +14,16 @@ namespace MVC.Models
 
         public List<EstudianteProfesor> EstudianteProfesors { get; private set; }
 
-        public Estudiante(string id, string name, Escuela escuela) : base(id)
+        private Estudiante(string id, string name, Escuela escuela) : base(id)
         {
             Name = name;
             Escuela = escuela;
             EstudianteProfesors = new();
+        }
+
+        public static Estudiante Build(string id, string name, Escuela escuela)
+        {
+            return new Estudiante(id, name, escuela);
         }
 
         public void AddProfesor(string profesorId)

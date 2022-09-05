@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVC.Models
 {
-    internal class EstudianteProfesor : Entity
+    public class EstudianteProfesor : Entity
     {
         public string EstudianteId { get; private set; }
 
