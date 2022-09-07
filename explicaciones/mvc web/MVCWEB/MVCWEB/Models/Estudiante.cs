@@ -28,7 +28,7 @@
             EscuelaId = escuelaId;
         }
 
-        public Estudiante Build(Guid id, string name,string documentoIdentidad,
+        public static Estudiante Build(Guid id, string name,string documentoIdentidad,
             DateTime fechaDeNacimiento, Guid escuelaId)
         {
             return new Estudiante(id, name, documentoIdentidad, fechaDeNacimiento, escuelaId);
