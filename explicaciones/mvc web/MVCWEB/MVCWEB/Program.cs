@@ -1,13 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using MVCWEB.Data;
+using MVCWEB.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//INYECCION DE DEPENDENCIAS
+builder.Services.AddScoped<IRepositoy, Repository>();
+builder.Services.AddScoped<EscuelaServices>();
+
+//config de db
 builder.Services.AddDbContext<MVCWEBContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebConnectionString")));
 
 var app = builder.Build();
 
